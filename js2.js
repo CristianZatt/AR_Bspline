@@ -78,11 +78,11 @@
 			
 			// grass peak position. how much to rotate the peak.
 			// less values (ie the .0005), will make as if there were a softer wind.
-			var wind = Math.sin(time*0.0005);
+			var wind = Math.sin(time*0.0012);
 			
 			// rotate the point, so grass curves are modified accordingly. If just moved horizontally, the curbe would
 			// end by being unstable with undesired visuals. 
-			var ang= this.angle + Math.PI/2 + wind * Math.PI/180*(this.maxAngle*Math.cos(time*0.0002));
+			var ang= this.angle + Math.PI/2 + wind * Math.PI/180*(this.maxAngle*Math.cos(time*0.00025));
 			var px= this.coords[0]+ this.offset_control_point + this.alto_grama*Math.cos(ang);
 			var py= this.coords[1]                  - this.alto_grama*Math.sin(ang);
 	  

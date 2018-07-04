@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
 		<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
@@ -14,9 +14,8 @@
 			<a-assets>
 				<canvas id='canvasGrama' crossorigin="anonymous"></canvas>	
 			</a-assets>
-			<a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow="" geometry="" material="src: #canvasGrama" draw-canvas="canvasGrama"></a-plane>
+			<a-plane position="0 0 0" rotation="-90 0 0" material="src: #canvasGrama" draw-canvas="canvasGrama"></a-plane>
 			<a-marker-camera preset='hiro'>
-				
 			</a-marker-camera>
 		</a-scene>
 	</body>
