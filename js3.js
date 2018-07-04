@@ -185,8 +185,8 @@ AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
 
     init: function () {
-		this.canvas = document.getElementById(this.data);
-		this.ctx = this.canvas.getContext('2d');
+		canvas = document.getElementById(this.data);
+		ctx = canvas.getContext('2d');
 
 		garden= new Garden();
 		garden.initialize(canvas.width, canvas.height, 300);
