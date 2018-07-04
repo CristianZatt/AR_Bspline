@@ -23,7 +23,7 @@
 		
 		// quadric curve middle control point. higher values means wider grass from base to peak.
 		// try offset_control_x=10 for thicker grass.
-		var offset_control_x=1.5;  
+		var offset_control_x=30;  
 		
 		this.alto_grama= minHeight+Math.random()*maxHeight;
 		this.maxAngle= 10+Math.random()*angleMax;
@@ -92,7 +92,10 @@
 			ctx.moveTo( c[0], c[1] );
 			ctx.bezierCurveTo(c[0], c[1], c[2], c[3], px, py);
 			ctx.bezierCurveTo(px, py, c[4], c[5], c[6], c[7]);
+			console.log(c[0] + " / " + c[1]+ " / " + c[2]+ " / " + c[3]+ " / " + px+ " / " + py);
+			console.log(px + " / " +  py + " / " +  c[4] + " / " +  c[5] + " / " +  c[6] + " / " +  c[7]);
 			ctx.closePath();
+			ctx.globalAlpha = 1;
 			ctx.fillStyle = this.color;
 			ctx.fill();
   
@@ -134,27 +137,24 @@
 	  paint : function(ctx, time){
 		ctx.save();
 		
-		ctx.globalAlpha= 1;
+		ctx.globalAlpha= 0.5;
 		
 		for(i=0; i<this.grass.length; i++ ) {
 		  this.grass[i].paint(ctx,time);
 		}
 		ctx.restore();
+		
 	  }
 	};
   })();
   
   
-	  function _doit()    {
-		
-		ctx.fillStyle= gradient;
-		ctx.fillRect(0,0,canvas.width,canvas.height);
-		var ntime= new Date().getTime();
-		var elapsed= ntime-time;
-		garden.paint( ctx, elapsed );
-		
-		
-	  }
+function _doit()    {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	var ntime= new Date().getTime();
+	var elapsed= ntime-time;
+	garden.paint( ctx, elapsed );
+}
   
   var interval= null;
   var canvas= null;
@@ -172,10 +172,11 @@
 		  canvas.height=window.innerHeight;
   
 		  garden= new Garden();
-		  garden.initialize(canvas.width, canvas.height, 300);
+		  garden.initialize(canvas.width, canvas.height, 1);
 		  		  
-		  time= new Date().getTime();
-		  interval = setInterval(_doit, 30);
+			time= new Date().getTime();
+			_doit();
+		  //interval = setInterval(_doit, 30);
 	  }
 	  
   window.addEventListener(

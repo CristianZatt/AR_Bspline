@@ -23,7 +23,7 @@
 		
 		// quadric curve middle control point. higher values means wider grass from base to peak.
 		// try offset_control_x=10 for thicker grass.
-		var offset_control_x=1.5;  
+		var offset_control_x=20;  
 		
 		this.alto_grama= minHeight+Math.random()*maxHeight;
 		this.maxAngle= 10+Math.random()*angleMax;
@@ -98,7 +98,7 @@
   
 			ctx.restore();
 			  
-	  }  
+	  }
 	};
   })();
   
@@ -145,16 +145,12 @@
   })();
   
   
-	  function _doit()    {
-		
-		ctx.fillStyle= gradient;
-		ctx.fillRect(0,0,canvas.width,canvas.height);
+	function _doit()    {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		var ntime= new Date().getTime();
 		var elapsed= ntime-time;
 		garden.paint( ctx, elapsed );
-		
-		
-	  }
+	}
   
 var interval= null;
 var canvas= null;
@@ -189,9 +185,9 @@ AFRAME.registerComponent('draw-canvas', {
 		ctx = canvas.getContext('2d');
 
 		garden= new Garden();
-		garden.initialize(canvas.width, canvas.height, 300);
+		garden.initialize(canvas.width, canvas.height, 60);
 			
 		time= new Date().getTime();
-		interval = setInterval(_doit, 30);
+		interval = setInterval(_doit, 80);
     }
   });
