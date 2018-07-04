@@ -159,24 +159,7 @@ var garden= null;
 
 var gradient;
 var time;
-  
-function GerarCanvasGrama() {
-
-	canvas= document.getElementById('canvasGrama');
-	canvas.width = 512;
-	canvas.height = 512;
-	ctx= canvas.getContext('2d');
-
-	garden= new Garden();
-	garden.initialize(canvas.width, canvas.height, 300);
-			
-	time= new Date().getTime();
-	interval = setInterval(_doit, 30);
-	
-	return canvas;
-	
-}
-  
+    
 AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
 
