@@ -150,7 +150,8 @@
   
   
 function _doit()    {
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	//ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.fillRect(50,0,canvas.width,canvas.height);
 	var ntime= new Date().getTime();
 	var elapsed= ntime-time;
 	garden.paint( ctx, elapsed );
