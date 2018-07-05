@@ -194,7 +194,7 @@ AFRAME.registerComponent('draw-canvas', {
 		ctx = canvas.getContext('2d');
 		time= new Date().getTime();
 		garden= new Garden();
-		garden.initialize(canvas.width, canvas.height, 40, time);
+		garden.initialize(canvas.width, canvas.height, 40);
 
 		interval = setInterval(_doit, 30);
     }
@@ -209,7 +209,7 @@ function init(images) {
   
 	time= new Date().getTime();
 	garden= new Garden();
-	garden.initialize(canvas.width, canvas.height, 50, time);
+	garden.initialize(canvas.width, canvas.height, 50);
 
 	interval = setInterval(_doit, 30);
 }
