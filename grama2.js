@@ -93,7 +93,6 @@
 			
 						
 			ctx.save();
-			ctx.strokeStyle = "yellow";
 			ctx.beginPath();
 			ctx.moveTo( this.coords.a1.x, this.coords.a1.y );
 			var precisao = 10;
