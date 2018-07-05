@@ -9,8 +9,8 @@
 	  maxAngle:    0,    // rotaçao maxima
 	  angle:       0,      
 	  coords:      null,  // coordenadas para calculo da spline
-	  offset_base:   10,    // largura da base da grama
-		offset_meio: 20,
+	  offset_base:   5,    // largura da base da grama
+		offset_meio: 8,
 		meioY: 0,
   
 	  initialize : function(canvasWidth, canvasHeight, minHeight, maxHeight, angleMax, initialMaxAngle)  {
@@ -194,7 +194,7 @@ AFRAME.registerComponent('draw-canvas', {
 		ctx = canvas.getContext('2d');
 		time= new Date().getTime();
 		garden= new Garden();
-		garden.initialize(canvas.width, canvas.height, 50, time);
+		garden.initialize(canvas.width, canvas.height, 40, time);
 
 		interval = setInterval(_doit, 30);
     }
