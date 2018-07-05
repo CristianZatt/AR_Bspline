@@ -186,7 +186,7 @@ var garden= null;
 var gradient;
 var time;
     
-/*AFRAME.registerComponent('draw-canvas', {
+AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
 
     init: function () {
@@ -198,7 +198,7 @@ var time;
 
 		interval = setInterval(_doit, 30);
     }
-	});*/
+	});
 	
 function init(images) {
 		
@@ -213,7 +213,5 @@ function init(images) {
 
 	interval = setInterval(_doit, 30);
 }
-	  
-window.addEventListener('load', init(null),	false);
   
   
