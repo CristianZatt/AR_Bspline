@@ -47,28 +47,29 @@
 		// end by being unstable with undesired visuals. 
 		var ang= this.angle + Math.PI/2 + wind * Math.PI/180*(this.maxAngle*Math.cos(time*0.00025));
 		//array de pontos (8 pontos)
+		this.alto_grama = 5;
 		var a1 = {
 			x: this.canvasWidth / 2, 
-			y: 0 + (this.canvasHeight / 2)};
+			y: 0 };
 		var a2 = {
 			x: a1.x - 80, 
 			y:  a1.y};
 			
 		var a3 = {
-			x: a2.x + 80 - this.alto_grama*Math.cos(ang) *20, 
-			y: a2.y + 80 + this.alto_grama*Math.sin(ang) * 10};
+			x: a2.x - this.alto_grama*Math.cos(ang) *5, 
+			y: a2.y + this.alto_grama*Math.sin(ang) * 3};
 			
 		var a4 = {
-			x: a3.x + 80 -  this.alto_grama*Math.cos(ang) *40, 
-			y: a3.y + this.alto_grama*Math.sin(ang) * 20};
+			x: a3.x -  this.alto_grama*Math.cos(ang) *15, 
+			y: a3.y + this.alto_grama*Math.sin(ang) * 10};
 			
 		var b4 = {
-			x: a4.x - ((a4.x - a3.x)/2) + this.alto_grama*Math.cos(ang) *20 , 
-			y: a4.y + ((a4.y - a3.y)/2)  + this.alto_grama*Math.sin(ang) *10};
+			x: a4.x - ((a4.x - a3.x)/2) + this.alto_grama*Math.cos(ang) *15 , 
+			y: a4.y + ((a4.y - a3.y)/2)  + this.alto_grama*Math.sin(ang) *5};
 			
 		var b3 = {
-			x: a3.x - this.alto_grama*Math.cos(ang) * 20, 
-			y: a3.y + this.alto_grama*Math.sin(ang) *10};
+			x: a3.x - this.alto_grama*Math.cos(ang) * 5, 
+			y: a3.y + this.alto_grama*Math.sin(ang) *2};
 		
 		var b2 = {
 			x: a2.x  - offset_control_x, 
