@@ -1,7 +1,7 @@
 # AR_Bspline
 Projeto para brincar e aprener.
 
-Realidade aumentada, com gramas mexendo, calculadas manualmente por B-Spline.
+Realidade aumentada utilizando https://jeromeetienne.github.io/AR.js/, e "gramas" calculadas manualmente com B-Splines.
 Abra o demo em um device com câmera.
 
 DEMO hospedado em:
